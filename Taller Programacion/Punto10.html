@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 10</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: Almacenes SUCESO S.A. desea saber el valor de venta de un producto VR_V, a partir de la siguiente información que posee de éste:  
+                     Costo de compra CC Tipo de producto TP (Perecedero o No perecedero). Tipo de conservación TC (frio o Ambiente)  Periodo de Conservación en días. 
+                     PC Periodo de almacenamiento en días PA Volumen en litros VOL Medio de almacenamiento MA (Nevera, congelador, estantería y guacal)  
+                     El valor de venta VR_V es igual a: El 20% más del valor del producto VR_P, cuando el tipo de producto TP corresponde a un artículo no perecedero, 
+                     o El 40% más del valor del producto VR_P, cuando el tipo de producto TP corresponde a un artículo perecedero.  
+                     El valor del producto VR_P, se calcula de la suma del Costo de compra CC, costo de almacenamiento CA y costo de exhibición CE,
+                     multiplicados por el porcentaje de depreciación del producto PDP.  
+                     Los costos y el porcentaje de depreciación deben ser calculados en subprogramas así: 
+                     Función Costo de Almacenamiento.  En este se debe calcular el costo de almacenamiento CA para ser devuelto al programa principal.  
+                     El costo de almacenamiento CA, se diferencia para artículos perecederos y no perecederos.
+                     Para los productos perecederos:  
+                     Costo de almacenamiento CA es igual al 5% del costo de compra CC cuando se trata de un producto de tipo de conservación TC en frio y con un período de conservación PC inferior a 10 días.  
+                     Costo de almacenamiento CA es igual al 10% del costo de compra CC cuando se trata de un producto de tipo de conservación TC en frio y con un período de conservación PC superior o igual  10 días.  
+                     Costo de almacenamiento CA es igual al 3% del costo de compra CC cuando se trata de un producto de tipo de conservación TC en ambiente y con un período de almacenamiento PA en inferior a 20 días.  
+                     Costo de almacenamiento CA es igual al 10% del costo de compra CC cuando se trata de un producto de tipo de conservación TC en ambiente y con un período de almacenamiento PA superior  a 20 días.  
+                     Costo de almacenamiento CA es igual al 5% del costo de compra CC cuando se trata de un producto de tipo de conservación TC en ambiente y con un período de almacenamiento PA  exacto a 20 días.  
+                     Para los productos no perecederos  
+                     El costo de almacenamiento CA se calcula a través de su volumen en litros VOL así:  
+                     Costo de almacenamiento CA es igual al 10% del costo de compra CC cuando el volumen VOL es mayor o igual a los 50 litros,   
+                     Costo de almacenamiento CA es igual  al 20% del costo de compra CC cuando el volumen VOL es menor a los 50 litros.  
+                     Función Porcentaje Depreciación del Producto.  En este se debe calcular el porcentaje de depreciación del producto PDP, para ser devueltos al programa principal.  
+                     El porcentaje de depreciación del producto PDP es igual al 0.95 cuando el período de almacenamiento PA es inferior a 30 días, o  
+                     El porcentaje de depreciación del producto PDP es igual al 0.85 cuando el período de almacenamiento PA es superior o igual a 30 días  
+                     Función Costo de  e: El costo de exhibición CE también se diferencia entre artículos perecederos y no perecederos, calculándose así:  • 
+                     Para los productos perecederos:  
+                     Aquellos artículos perecederos cuyo tipo de conservación TC es frio, y el medio de almacenamiento MA es nevera, el costo de exhibición CE corresponde al doble del costo de almacenamiento CA.  
+                     Aquellos artículos perecederos cuyo tipo de conservación TC es frio, y el medio de almacenamiento MA es congelador, el costo de exhibición CE corresponde al del costo de almacenamiento CA.  • 
+                     Para los productos no perecederos:  
+                     El costo de exhibición CE corresponde al 5% del costo de almacenamiento CA, para los productos cuyo medio de almacenamiento MA es en estantería  
+                     El costo de exhibición CE corresponde al 7% del costo de almacenamiento CA, para los productos cuyo medio de almacenamiento MA es en guacal
+    -->
+    <script>
+        var cc = prompt("Costo de compra: ");
+        var tp = prompt("Tipo de producto [P]erecedero, [N]o perecedero: ");
+        var tc = prompt("Tipo de conservacion [F]rio, [A]mbiente: ");
+        var pc = prompt("Periodo de conservacion (dias): ");
+        var pa = prompt("Periodo de almacenamiento (dias): ");
+        var volumen = prompt("Volumen (litros): ");
+        var ma = prompt("Medio de almacenamiento [N]evera, [C]ongelador, [E]stanteria, [G]uacal: ");
+
+        var ca;// costo de almacenamiento
+        var pdp; // porcentaje deprecion del producto
+        var ce; //costo de exhibicion;
+
+        if(tp == "p"){ // perecedero
+            if(tc == "f"){ // frio
+                if(pc < 10){ // menor a 10 dias
+                    ca = cc * 5 / 100;
+                }else{ // mayor a 10 dias
+                    ca = cc * 10 / 100;
+                }
+            }else{// ambiente
+               if (pa < 20){ // menor a 20 dias
+                   ca = cc * 3 / 100;
+               }else{
+                   if(pa > 20){ // mayor a 20 dias
+                       ca = cc * 10 / 100;
+                   }else{ // 20 dias 
+                       ca = cc * 5 / 100;
+                   }
+               }
+            }
+        }else{//no perecedero
+            if (volumen >= 50){// volumen mayor a 50 litros
+                ca = cc * 10 / 100;
+            }else{// volumen menor a 50 litros
+                ca = cc * 20 / 100;
+            }
+        }
+
+
+        if(pa < 30){// periodo de almacenamiento menor a 30 dias
+            pdp = 0,95;
+        }else{// superior o igual a 30
+            pdp =  0,85; 
+        }
+
+
+        if(tp == "p"){//perecedero
+            if(ma == "n"){//nevera
+                ce = ca * 2;
+            }else{
+                ce = ca;
+            }
+        }else{// no perecederos
+            if(ma == "e"){//estanteria
+                ce = ca * 5 / 100;
+            }else{//guacal
+                ce = ca * 7 / 100;
+            }
+        }
+
+        var  VrP = (cc + ca + ce) * pdp; //valor del producto
+        var VrV = 0; // valor de venta
+
+        if(tp == "p"){//perecederos
+            VrV = VrP * 1.4 // 40% mas
+        }else{//no perecederos
+            VrV = VrP * 1.2;// 20% mas
+        }
+
+        document.write("Costo de almacenamiento: "+ca+"<br/>");
+        document.write("Porcentaje de depreciacion: "+pdp+"<br/>");
+        document.write("Costo de exhibicion: "+ce+"<br/>");
+        document.write("Valor del producto: "+VrP+"<br/>");
+        document.write("Valor producto: "+VrV);
+    </script>
+</body>
+</html>

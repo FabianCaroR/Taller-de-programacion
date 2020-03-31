@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 25</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 29/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description:  Construir un programa que cree un vector N posiciones. El vector se debe llenar con la siguiente formula
+                      Celda[i] = (i + 1) * i.  Luego debe mostrar la sumatoria y el promedio de los elementos del arreglo. 
+    -->
+    <script>
+        var numero = prompt("Cuantas pocisiones desea: ");
+        var vec = [];
+
+        var s=0;
+        for(var i=0; i<n; i++){
+            vec[i] = (i+1)*i;
+            s = s+ vec[i];
+        }
+
+        document.write("La sumatoria es: "+s);
+        document.write("El promedio es: "+(s/n));
+
+    </script>
+</body>
+</html>

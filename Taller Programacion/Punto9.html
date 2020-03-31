@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 9</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: Una empresa de envío de mercancías, tiene un plan de tarifas y descuentos sobre el valor del envío de mercancía de sus clientes:  
+                    Tarifas: 
+                             •Si el peso  de la mercancía es inferior a 100 kg, la tarifa para el envío de ésta es de 20.000 pesos.  
+                             •Si el peso de la mercancía está entre 100 y 150 kg, la tarifa para el envío de ésta es de 25.000 pesos. 
+                             •Si el peso de la mercancía es superior a 150 kg y menor o igual a 200 kg, la tarifa para el envío de ésta es de 30.000 pesos. 
+                             •Si el peso de la mercancía es superior a 200 kg, la tarifa es de 35.000 pesos y además por cada 10 kg adicionales se paga 2.000 pesos.  
+                    Descuentos: 
+                                •Si el valor de la mercancía está entre 300.000 y 600.000 pesos se hace un descuento del 10% sobre el valor del envío. 
+                                •Si el valor de la mercancía es superior a 600.000 pero menor o igual a 1.000.000 de pesos se hace un descuento del 20% sobre el valor del envío. 
+                                •Si el valor de la mercancía es superior a 1.000.000 se hace un descuento del 30% sobre el valor del envío.  
+                    Promociones (solo hay dos tipos de pago): 
+                                •Si es día de promoción (lunes) y paga con tarjeta propia del almacén, sólo paga el 50% del costo de envío. 
+                                •Si paga en efectivo y el valor de la mercancía es superior a 1.000.000, sólo paga el 60% del costo de envío.  
+                    Si el cliente aplica a una promoción, no puede aplicar a un descuento. Se debe obtener el valor total del envío.
+    -->
+    <script>
+        var peso = prompt("Peso de la mercancia: ");
+        var valor = prompt("Valor de la mercancia: ");
+        var lunes = prompt("Es lunes [S]i [N]o: ");
+        var pago = prompt("Tipo de pago [E]fectivo [T]arjeta:");
+        
+        var tarifa; 
+        var descuento;
+        var promocion;
+
+        if(peso < 100){
+            tarifa = 20000;
+        }else{
+            if(peso >= 100 && peso <= 150){
+                tarifa = 25000;
+            }else{
+                if(peso > 150 && peso <= 200){
+                    tarifa = 30000;
+                }else{
+                    tarifa = 35000 + (peso - 200) / 10 * 2000;
+                }
+            }
+        }
+
+        if(valor >= 300000 && valor <= 600000){
+            descuento = tarifa * 10 / 100;
+        }else{
+            if(valor > 600000 && valor <= 1000000){
+                descuento = tarifa * 20 / 100;
+            }else{
+                if(valor > 1000000){
+                    descuento = tarifa * 30 / 100;
+                }
+            }
+        }
+
+        if(lunes == "s" && pago == "t"){
+            promocion = tarifa * 50 / 100;
+        }else{
+            if(pago == e && valor > 1000000){
+                promocion = tarifa * 60 / 100;
+            }
+        }
+
+        if(promocion > 0){
+            document.write("Tarifa: "+tarifa+"<br/>");
+            document.write("Promocion: "+promocion+"<br/>");
+            document.write("Total a pagar: "+(tarifa - promocion));
+        }else{
+            document.write("Tarifa: "+tarifa+"<br/>");
+            document.write("Descuento: "+descuento+"<br/>");
+            document.write("Total a pagar: "+(tarifa - descuento)+"<br/>");  
+        }
+    </script>
+</body>
+</html>

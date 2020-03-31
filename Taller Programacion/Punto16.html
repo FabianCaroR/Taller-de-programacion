@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 16</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: la pagina resolvaera los valores de X para una ecuación cuadrática, los cuales ingresa el usuario el valor a, b y c. 
+    -->
+    <script>
+        var a = prompt("Ingrese el valor de a:");
+        var b = prompt("Ingrese el valor de b:");
+        var c = prompt("Ingrese el valor de c:");
+
+        var raiz = Math.sqrt(b*b-4*a*c);
+        var x1 = (-b + raiz) / (2*a);
+        var x2 = (-b - raiz) / (2*a);
+
+        document.write("X1: "+x1+"<br/>");
+        document.write("X2: "+x2);
+
+    </script>
+</body>
+</html>

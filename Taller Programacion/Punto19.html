@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 19</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: La pagina le pedira al usuario que ingrese un numero por pantalla y luego le dira si el numero es primo o no. 
+    -->
+    <script>
+        var numero = prompt("Ingrese el numero: ");
+        var con = 0;
+        for(var i = 1; i<=numero; i++){
+            if(numero % i == 0){
+               con = con +1; 
+            }
+        }
+        if(con == 2){
+            document.write("El numero "+numero+" es primo");
+        }else{
+            document.write("El numero "+numero+" no es primo");
+        }
+    </script>
+</body>
+</html>

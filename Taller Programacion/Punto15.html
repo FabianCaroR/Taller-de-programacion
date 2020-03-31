@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 15</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: el programa  calculara los n primeros términos de la serie de Taylor modificada.
+    -->
+    <script>
+        var numero = prompt("Cuantos terminos desea:");
+        var x = prompt("Ingrese el valor de X:");
+
+        var s = 0;
+        var t;
+        var sig = 1;
+
+
+        
+        for(var i = 0; i<numero; i++){
+            t = Math.pov (x, i)/ factorial(i)*sig;
+            sig = sig * -1;
+            s += t;
+        }
+        document.write("El factorial del numero "+x+" es: "+s);
+
+        var factorial = function(numero1){
+            var aux = 1;
+            for (var j =1; j<=numero1; j++){
+                aux = aux * j;
+            }
+            return aux;
+        }
+    </script>
+</body>
+</html>

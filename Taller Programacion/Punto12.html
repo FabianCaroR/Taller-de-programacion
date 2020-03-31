@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 12</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: La pagina le pedira al usuario cuantos numeros quiere ver, y el programa le imprimira por pantalla 
+        todos los N numeros, su sumatoria y su promedio.
+    -->
+    <script>
+        var numero = prompt("Cuantos numeros desea: ");
+        var suma = 0;
+        var promedio;
+
+        for(var i = 1; i <= numero; i++){
+            suma = suma + i;
+            document.write(i+" ,   ");
+        }
+
+        promedio = suma / i;
+
+        document.write("<br/>La sumatoria es: "+suma);
+        document.write("<br/>El promedio es: "+promedio);
+
+    </script>
+</body>
+</html>

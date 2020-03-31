@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 17</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: la pagina imprimira los N primeros números de la serie Fibonacci y su sumatoria, el N numero lo ingresara el usuario.
+    -->
+    <script>
+        var numero = prompt("Cunatos terminos desea: ");
+        var suma = 1;
+        var a = 0;
+        var b = 1;
+        var c;
+
+        document.write(a+", "+b+", ");
+        for(var i = 2; i <= numero; i++){
+            c = a + b;
+            document.write(c+", ");
+            suma = suma + c;
+            a = b;
+            b = c; 
+        }
+
+        document.write("<br/>La suma es: "+suma);
+    </script>
+</body>
+</html>

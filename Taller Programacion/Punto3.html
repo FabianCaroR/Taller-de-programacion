@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 3</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: El programa le pedira al usuario que ingrese tres numeros, despues le mostrara por pantalla 
+                     cual es el numero mayor, cual es el numero del medio y cual es el numero menor ingresado.
+    -->
+    <script>
+        var numero1 = prompt("Ingrese el primer numero");
+        var numero2 = prompt("Ingrese el segundo numero");
+        var numero3 = prompt("Ingrese el tercer numero");
+
+        var medio;
+        if((numero1<numero2 && numero1>numero3) || (numero1>numero2 && numero1<numero3) ){
+            medio = numero1;
+        }else{
+            if((numero2<numero1 && numero2>numero3) || (numero2>numero1 && numero2<numero3)){
+                medio = numero2;
+            }else{
+                if((numero3<numero1 && numero3>numero2) || (numero3>numero1 && numero3<numero2)){
+                    medio = numero3; 
+                }
+            }
+        }
+
+        var mayor = Math.max(numero1,numero2,numero3);
+        var menor = Math.min(numero1,numero2,numero3);
+        document.write("El numero mayor es "+mayor+"<br/>");
+        document.write("El numero medio es "+medio+"<br/>");
+        document.write("El numero menor es "+menor+"<br/>");
+
+    </script>
+</body>
+</html>

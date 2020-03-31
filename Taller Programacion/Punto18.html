@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 18</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: Construir un programa que imprima los N primeros números de la siguiente serie, la cual está
+                     representada por:  0, 1, 2, 3, 6, 11, 20, 37, 68,… 
+    -->
+    <script>
+        var numero = prompt("Cunatos terminos desea: ");
+        var suma = 3;
+        var a = 0;
+        var b = 1;
+        var c = 2;
+        var d;
+
+        document.write(a+", "+b+", "+c+", ");
+        for(var i = 4; i <= numero; i++){
+            d = a + b + c;
+            document.write(d+", ");
+            suma = suma + d;
+            a = b;
+            b = c; 
+            c = d;
+        }
+
+        document.write("<br/>La sumatoria es: "+suma);
+    </script>
+</body>
+</html>

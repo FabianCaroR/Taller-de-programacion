@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 5</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: La pagina le pedira al usuario que ingrese un año y despues determinara si el año ingresado es bisiesto o no.
+    -->
+    <script>
+        var año = prompt("Ingrese el año");
+
+        var resultado 
+        if((año % 4 == 0) && (año % 100 != 0 ) || (año % 400 == 0)) {
+            alert("El año "+año+" si es bisiesto.")
+        }else{
+            alert("El año "+año+" no es bisiesto.")
+        }
+    </script>
+</body>
+</html>

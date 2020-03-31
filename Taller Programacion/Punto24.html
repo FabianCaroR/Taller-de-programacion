@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 24</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 29/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description:  Construir un programa que cree un vector de N posiciones. Si la posición es par, 
+                      la celda del vector se debe llenar con la siguiente formula Celda[i] = i + 7. 
+                      Si la celda es impar, la celda del vector se debe llenar con la siguiente formula 
+                      Celda[i] = i - 1.  Se debe mostrar como quedo el arreglo y luego debe mostrar la 
+                      sumatoria de las celdas con valores pares y la productoria de las celdas con valores impares. 
+    -->
+    <script>
+        var numero = prompt("Cuantas pocisiones desea: ");
+        var vec = [];
+        var s=0;
+        var p=1;
+
+        for(var i = 0; i <numero; i++){
+            if(par(i)){
+                vec[i] = i +7;
+            }else{
+                vec[i]= i-1;
+            }
+            if(par(vec[i])){
+                s = s + vec[i];
+            }else{
+                p = p * vec[i];
+            }
+            document.write("vec["+i+"]"+vec[i]);
+        }
+        document.write("La suma es: "+s);
+        document.write("La prouctoria es: "+p);
+
+        function par(n){
+            if(n % 2 == 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

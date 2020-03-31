@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 22</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 29/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: la pagina le pedira al usuario los N numeros de precision para calcular el numero pi
+    -->
+    <script>
+        var numero = prompt("Cuantos terminos desea: ");
+        var d=1;
+        var sig = 1;
+        var t;
+        var s =0;
+
+        for(var i = 1; i<=numero; i++){
+            t = 1 / d * sig;
+            s = s + t;
+            d = d + 2;
+            sig = sig * -1;
+        }
+        var pi = s *4;
+
+        alert("PI = "+pi);
+    </script>
+</body>
+</html>

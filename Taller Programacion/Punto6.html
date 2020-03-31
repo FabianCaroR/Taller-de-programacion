@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 6</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: la pagina l epedira al usuario que ingrese el  nombre de un empleado, su salario básico por hora,
+                     el número de horas trabajadas en el mes y el salario minimo, si el salrio mensual es amyor que el minimo
+                     la pagina monstrara el nombre del empleado y su salario mensual, si es menor monstrara solo el nombre. 
+    -->
+    <script>
+        var nombre = prompt("Ingrese el nombre del empleado");
+        var horas = prompt("Ingrese las horas trabajadas");
+        var valor = prompt("Ingrese el valor hora");
+        var salario = prompt("Ingrese el valor del salario minimo");
+
+        var total = horas * valor;
+        if(total > salario){
+            document.write("Nombre: "+nombre+"<br/>");
+            document.write("Salario mensual: "+total);
+        }else{
+            document.write("Nombre: "+nombre);
+        }
+    </script>
+</body>
+</html>

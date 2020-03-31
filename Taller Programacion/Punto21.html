@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 21</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 29/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description:  El programa debe calcular el número natural e, el usuario debe ingresar los N  numeros de precision que desea:
+    -->
+    <script>
+        var numero = prompt("Cuantos terminos de precision desea:");
+
+        var s = 0; 
+        var t;
+        var n;
+        for(var i = 0; i < numero; i++){
+           t = 1 / factorial(i);
+           s = s +t;
+        }
+
+        document.write("e = "+s(numero));
+
+        function factorial(n){
+            var aux = 1;
+            for (var j = 2; j <= n; j++){
+                aux = aux * j;
+            }
+            return aux;
+        }
+   
+    </script>
+</body>
+</html>

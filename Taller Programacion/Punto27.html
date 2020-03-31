@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 22</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 29/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: La pagina le pedira al usuario que ingrese una frase y el programa determinara si la frase es palindroma o no
+    -->
+    <script>
+
+        function Palindromo(cadena){
+            t = cadena.length;
+
+            if(t == 0){
+                return document.write("La frase no es palindroma");
+            }
+            for(var i = 0; i<t/2; i++){
+                if(cadena[i] != cadena[t-1-i]){
+                    return document.write("La frase no es palindroma");
+                }
+            }
+            return (alert("La frase SI es palindroma"));
+        }
+
+        var frase = prompt("ingrese la frase: ");
+        document.write(Palindromo(frase));
+    </script>
+</body>
+</html>
+
+

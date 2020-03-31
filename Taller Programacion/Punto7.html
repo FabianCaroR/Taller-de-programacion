@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 7</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: La pagina le pedira la cantidad de escritorios que quiere comprar al usuario, teniendo en cuenta
+                    que cada escritorio cuesta $650.000, y si el usuario compra menos de 5 unidades se le da un descuento
+                    del 10% sobre la compra, si las unidades es mayor o igual a cinco pero menoes de 10 el descuesto es del
+                    20% y si son 10 o mas se le da un descuento del 40%
+    -->
+    <script>
+        alert("El precio por cada escritorio es de: $650.000");
+        var cantidad = prompt("Cuantos escritorios va a comprar?");
+        var precio = 650000;
+
+        var total = cantidad * precio;
+        var des;
+        var pago;
+
+        if(cantidad<5){
+            des = (total * 10) /100;
+            pago = total - des;
+            document.write("Numero de escritorios: "+cantidad+"<br/>");
+            document.write("El valor a pagar con el descuentoo del 10% es: "+pago);
+        }else{
+            if(cantidad>=5 && cantidad<10){
+                des = (total * 20) /100;
+                pago = total - des;
+                document.write("Numero de escritorios: "+cantidad+"<br/>");
+                document.write("El valor a pagar con el descuentoo del 20% es: "+pago);
+            }else{
+                if(cantidad>=10){
+                des = (total * 40) /100;
+                pago = total - des;
+                document.write("Numero de escritorios: "+cantidad+"<br/>");
+                document.write("El valor a pagar con el descuentoo del 40% es: "+pago);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

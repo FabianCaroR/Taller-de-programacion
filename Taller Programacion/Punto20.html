@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punto 20</title>
+</head>
+<body>
+    <!--
+        Name: Fabian Mauricio Caro Rodriguez
+
+        NRC: 3113
+
+        Date: 26/03/2020
+
+        Version: 1.0
+
+        Copyright: Fabian Caro
+
+        Description: El programa  imprimira los N primeros números primos, su sumatoria y promedio
+    -->
+    <script>
+        var numero = prompt("Cuantos numeros primos desea: ");
+        var con=0;
+        var j =1;
+        var s=0;
+        while(con < numero){
+            if(primo(i)){
+                document.write(i);
+                con ++;
+                s = s + i;
+            }
+            i++;
+        }
+        document.write("La suma es: "+s);
+        document.write("El promedio es: "+(s/n));
+
+        function primo(numero){
+            for(var i = 1; i<=numero/2; i++){
+            if(numero % i == 0){
+               return false;
+            }else{
+                return true;
+            }
+        }
+        }
+    </script>
+</body>
+</html>
